@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Explicacion de position:
+            1) static: Este es el valor predeterminado para todos los elementos. Los elementos con position: static; se colocan en el flujo normal del documento, es decir, se muestran en el orden en que aparecen en el HTML.
+            2) relative: Los elementos con position: relative; se posicionan en relación con su posición original en el flujo del documento. Si se aplica un desplazamiento (por ejemplo, usando las propiedades top, right, bottom, o left), el elemento se moverá desde su posición original, pero su espacio original en el flujo del documento permanecerá reservado.
+            3) absolute: Los elementos con position: absolute; se posicionan en relación con el primer ancestro posicionado o en relación con el contenedor de nivel superior (el documento HTML). Esto significa que si un elemento padre tiene un position diferente de static, el elemento absoluto se posicionará en relación con él. Si ningún ancestro tiene un position diferente de static, el elemento absoluto se posicionará en relación con el documento HTML.
+            4) fixed: Los elementos con position: fixed;  permanecerán fijos en la pantalla incluso cuando se desplaza la página.
+            5) sticky: Los elementos con position: sticky; se comportan como relative hasta que se desplaza la pantalla, momento en el cual se comportan como fixed. Esto significa que el elemento se volverá fijo en una posición específica de la ventana del navegador mientras se desplaza, pero volverá a su posición relativa original cuando se alcance cierto punto de desplazamiento.
+        */
+
+      .container {
+        height: 200px;
+        width: 200px;
+        background-color: aqua;
+        position: relative;
+        top: 80px;
+      }
+      .item {
+        height: 20px;
+        width: 20px;
+        background-color: rgb(35, 22, 110);
+        position: absolute;
+        right: 80px;
+      }
+      nav {
+        width: 100%;
+        height: 200px;
+        background-color: rgb(99, 17, 153);
+        color: aqua;
+        position: fixed;
+      }
+      ul p {
+          position: sticky;
+          top: 0;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item"></div>
+    </div>
+    <nav>
+      Lorem Ipsum "Neque porro quisquam est qui dolorem ipsum quia dolor sit
+      amet, consectetur, adipisci velit..." "No hay nadie que ame el dolor
+      mismo, que lo busque, lo encuentre y lo quiera, simplemente porque es el
+      dolor." Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+      erat ante, posuere quis odio eget, vehicula scelerisque ipsum. Morbi lacus
+      metus, rutrum sit amet malesuada in, scelerisque in orci. Vivamus et
+      finibus est. Quisque pretium felis id dignissim facilisis. Donec nec diam
+      sodales, tincidunt ex vel, venenatis urna. Duis sit amet urna viverra
+      augue mattis egestas a a neque. Morbi nec turpis lacus. Mauris lacinia
+      vehicula quam, ut blandit nunc. Nulla placerat iaculis dolor. Morbi sed
+      feugiat nulla. Pellentesque porta neque lobortis ipsum ornare gravida.
+      Morbi porttitor purus sit amet sem lacinia, a accumsan mi aliquam. Fusce
+      sit amet magna odio. Pellentesque id maximus sapien, dapibus consectetur
+      metus. Aliquam ultrices erat non blandit tincidunt. Sed elementum nulla
+      eros, eu euismod diam pellentesque vitae. Vivamus ac aliquet massa. Cras
+      vitae lorem ac nunc bibendum lacinia. Integer porta ex sem, ut tincidunt
+      ex laoreet non. Quisque efficitur euismod enim vitae aliquet. Nulla
+      vehicula faucibus congue. Nulla ac lacinia mi, at aliquet tortor. Aenean
+      vitae mollis enim, eu sagittis neque. Donec pretium dolor at purus
+      fermentum aliquet. Maecenas consectetur ligula massa, vitae rhoncus ex
+      venenatis id. Nam fringilla mi sed arcu auctor, non pharetra mauris
+      dignissim. Donec et viverra ex. Nam tempus rhoncus sem sit amet varius.
+      Praesent cursus dictum massa, ut cursus libero ultricies eget.
+      Pellentesque vel ultricies ligula, in elementum metus. Aenean lobortis
+      vulputate nunc eget malesuada. Vestibulum interdum felis et ex tempus
+      ultrices. Integer consectetur accumsan enim non mollis. Maecenas molestie
+      neque felis, at mattis enim pretium vel. Morbi urna nibh, eleifend quis
+      felis ac, efficitur malesuada mauris. Nam a mauris accumsan, maximus enim
+      eget, iaculis neque. Vestibulum aliquet arcu felis, vel bibendum sem
+      viverra ut. Phasellus eu accumsan massa, eget commodo ante. Fusce tempus
+      sapien et sem tempus finibus. Ut sapien tortor, ullamcorper sed varius ac,
+      rhoncus ut ipsum. Nulla ultricies molestie ex, et consectetur nisl
+      venenatis et. In id aliquam odio. Praesent at congue nisi, sed pulvinar
+      tellus. Nunc ac pulvinar risus. Phasellus eget enim eu odio aliquam
+      laoreet quis eu tellus. Nam vel est magna. Integer eu ligula sit amet
+      lorem dignissim eleifend. Morbi et risus euismod, auctor nisl at,
+      ullamcorper ipsum. Aenean semper urna in augue iaculis semper. Donec at ex
+      eget leo lobortis pulvinar ac sed neque. Morbi consequat nulla auctor
+      mauris condimentum, vel vestibulum nulla vehicula. Ut ut mollis nibh.
+      Aenean magna erat, tempus sit amet dignissim quis, luctus eget massa.
+      Integer sed fermentum odio. Phasellus venenatis consequat purus, in semper
+      enim varius non. Pellentesque at ante tempus, varius turpis eget, suscipit
+      ipsum. Donec non erat ut urna bibendum tempor. Nullam efficitur purus
+      neque, a gravida purus tempus vitae. Aenean magna turpis, iaculis nec
+      velit ornare, accumsan tristique justo. Aenean aliquam iaculis sem, sit
+      amet tempus ipsum tempor quis. Mauris consequat suscipit lectus, vel
+      facilisis dui euismod sed. Nunc lacinia a sem in euismod.
+    </nav>
+    <ul>
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+
+      <p>El titulo se desplaza</p>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+      <li>Escritura para ver el efecto del scroll</li>
+    </ul>
+  </body>
+</html>

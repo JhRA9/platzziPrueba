@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: rgb(161, 173, 180);
+        }
+        /* Este selector se aplica a todos los elementos <p> (párrafos) en la página y establece el color del texto */
+        p{
+            color: rgb(30, 122, 58);
+        }
+        /* dos puntos es una pseudoclase y dos veces dos puntos es  un pseudoelemento */
+
+        /* Este selector se aplica a los elementos <p> cuando el cursor se sitúa sobre ellos. Cambia el color del texto */
+        p:hover{
+            color: rgb(80, 255, 153);
+        }
+        /* Este selector se aplica a los elementos <p> que son el segundo hijo directo de un elemento <div>. */
+        div p:nth-child(2){
+            color: rgb(44, 145, 163);
+        }
+        /* Este selector se aplica al primer carácter de cada elemento <p>. Cambia el color del primer carácter del texto */
+        p::first-letter{
+            color: rgb(18, 65, 4);
+        }
+        /* Este selector inserta contenido antes de cada elemento <p>. */
+        p::before{
+             content: "❤🤣😂";
+        }
+        /* Este selector inserta contenido después de cada elemento <p>. */
+        p::after{
+            content: "💋";
+        }
+        /* Este selector se aplica a los placeholders de los elementos de entrada y área de texto. */
+        ::placeholder{
+            color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <p>hola</p>
+    <div>
+        <p>primer comentario</p>
+        <p>segundo comentario</p>
+        <p>Tercer comentario</p>
+    </div>
+    <input type="text" placeholder="Nombre">
+</body>
+</html>

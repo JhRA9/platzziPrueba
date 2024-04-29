@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            width: 300px;
+            height: 300px;
+            background-color: aquamarine;
+            /* Aqui lo que esttoy haciendo es, decirle que del espacio toal que tiene me cree 4 filas y 4 columnas
+            cada  "fr" es un espacio */
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+        }
+        .item{
+            background-color: beige;
+        }
+        /* Lo que le estoy diciendo en  grid-column y en grid-row es  que desde la linea #1 hasta la linea #2 debe estar el item*/
+        .container .item:nth-child(1){
+            grid-column: 1/2;  
+        }
+        .container .item:nth-child(2){
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+        .container .item:nth-child(3){
+            grid-column: 3/4;
+            grid-row: 3/4;
+        }
+        .container .item:nth-child(4){
+            grid-column: 4/5;
+            grid-row: 4/5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Hijo 1</div>
+        <div class="item">Hijo 2</div>
+        <div class="item">Hijo 3</div>
+        <div class="item">Hijo 4</div>
+    </div>
+</body>
+</html>

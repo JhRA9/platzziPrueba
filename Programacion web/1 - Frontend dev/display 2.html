@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Para utilizar los contenedores es importanet colocarles la clase container */
+        .container{
+            /* Esta propiedad CSS se aplica al contenedor y establece el modelo de diseño de caja flexible (flexbox). Al establecer esta propiedad en un contenedor, puedes controlar fácilmente la disposición de sus elementos hijos.  */
+            display: flex;
+            background-color: aqua;
+            /* Esta propiedad CSS se aplica al contenedor flex y controla la alineación de los elementos flexibles a lo largo del eje principal. En este caso, establecer justify-content en space-between distribuirá los elementos hijos a lo largo del eje principal del contenedor de manera uniforme, dejando un espacio igual entre cada par de elementos adyacentes y también entre el primer elemento y el inicio del contenedor, así como entre el último elemento y el final del contenedor. */
+            justify-content: space-between;
+            /* Esta propiedad CSS se aplica al contenedor flex y controla la alineación de los elementos flexibles a lo largo del eje transversal. En este caso, establecer align-items en center alinea verticalmente los elementos hijos en el centro del contenedor, asegurando que todos los elementos tengan la misma altura en relación con el contenedor. */
+            align-items: center;
+            height: 200px;
+            /* Cambia la horientacion de fila a columna */
+            /* flex-direction: column; */
+        }
+        /* Si en alguna ocasion se necesita que un item se vvuelva padre, tenemos que volverlo container la clase */
+        .item{
+            width: 30px;
+            height: 30px;
+            background-color: blue;
+        }
+        /* Primero que todo para hacer referencia a los elementos de adentro del containerr, es necesario dejarlos con un espacio
+        luego se leccionan los items */
+        .container .item:nth-child(2n+1){
+            background-color: rgb(54, 20, 87);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Hijo 1</div>
+        <div class="item">Hijo 2</div>
+        <div class="item">Hijo 3</div>
+        <div class="item">Hijo 4</div>
+    </div>
+</body>
+</html>

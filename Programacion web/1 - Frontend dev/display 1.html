@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        a{
+            background-color: black;
+            /* no se les puede poner una altura o un ancho pero si tienen una margen */
+        }
+        div{
+            background-color: aqua;
+            width: 300px;
+            height: 80px;
+            margin: 250px;
+        }
+        button{
+            background-color: aqua;
+            width: 300px;
+            height: 80px;
+            /* Los botones son curiosos, se comportan como una etiqueta en linea pero tienen atributos en bloques */
+        }
+    </style>
+</head>
+<body>
+    <div>Los div son de tipo bloque, lo que quiere decir que el color se aplicara de principio a fin y estos se pueden modificar con un alto y un ancho</div>
+    <a href="/">Los enlaces no son de tipo bloque si no de en linea, esto quiere decir que se adaptan a su tamano</a>
+    <button>Este es inline block</button>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      :root {
+        /* Colores globales */
+
+        --black: #000000;
+        --white: #ffffff;
+        --very-light-pink: #c7c7c7;
+        --text-input-field: #f7f7f7;
+        --dark: #232830;
+        --hospital-green: #acd9b2;
+        --sm: 14px;
+        --md: 16px;
+        --lg: 18px;
+      }
+      .desktop-menu {
+        width: 100px;
+        height: auto;
+        border: 1px solid var(--very-light-pink);
+        border-radius: 6px;
+        /* Configurarcion del padding, top, right, bottom y left  */
+        padding: 20px 20px 0 20px;
+      }
+      .desktop-menu ul {
+        /* es para quitarle los puntos de las listas */
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .desktop-menu ul li {
+        text-align: right;
+        
+      }
+      /* Esto es para estiilizar el ultimo elemenos de la lista */
+      .desktop-menu ul li:last-child {
+        padding-top: 20px;
+        /* Se puede decidir que parte  del  borde mosrtrar */
+        border-top: 1px solid var(--very-light-pink);
+      }
+      /* estilizar el elemento final */
+      .desktop-menu ul li:last-child a {
+        color: var(--hospital-green);
+        /* se utiliza para establecer el tamaño de fuente de un elemento de texto. Se puede aplicar a cualquier elemento HTML que contenga texto, como párrafos (<p>), encabezados (<h1>, <h2>, etc.), enlaces (<a>), entre otros */
+        font-size: var(--sm);
+      }
+      /* El selector .desktop-menu ul li:not(:last-child) selecciona todos los elementos li dentro de ul que no son el último hijo (:last-child) de su elemento padre ul, y les aplica la regla de estilo font-weight: bold;.*/
+      .desktop-menu ul li:not(:last-child) {
+            font-weight: bold;
+      }
+
+      .desktop-menu ul li a {
+        color: var(--black);
+        text-decoration: none;
+        /* Los elementos en linea, como lo son los textos, debemos aplicarles el display inline-block para poder darles margin */
+        margin-bottom: 20px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="desktop-menu">
+      <ul>
+        <li>
+          <a href="/" class="title">My orders</a>
+        </li>
+        <li>
+          <a href="/">My account</a>
+        </li>
+        <li>
+          <a href="/">Sign out</a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

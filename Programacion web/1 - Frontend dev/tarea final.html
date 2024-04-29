@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .card {
+        
+        width: 380px;
+        height: 580px;
+        background-color: cadetblue;
+        border-radius: 80px;
+        overflow: hidden;
+        position: relative;
+      }
+      section {
+
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .card img {
+        width: 100%;
+        height: 40%;
+      }
+      .card .container {
+        top: 20px;
+        position: relative;
+        left: 120px;
+        width: 150px;
+        height: 150px;
+        border-radius: 80px;
+        background-color: aliceblue;
+        overflow: hidden;
+
+      }
+      .card .container img {
+        position: absolute;
+        left: 30px;
+        width: 60%;
+        height: 100%;
+      }
+      .card p {
+        margin: 25px;
+        text-align: center;
+      }
+      .card .container2{
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .card .container2 .item{
+        
+        width: 10%;
+        height: 100%;
+        border-radius: 40%;
+        background-color: aliceblue;
+      }
+      .card .container2 .item:nth-child(1){
+        height: 100%;
+        overflow: hidden;
+      }
+      .card .container2 .item:nth-child(2){
+        height: 100%;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="card">
+        <img
+          src="https://img.freepik.com/foto-gratis/astronomia-cielo-nocturno-galactico-ciencia-combinada-ia-generativa_188544-9656.jpg?size=626&ext=jpg&ga=GA1.1.1803636316.1708041600&semt=ais" alt="astronomia"
+        />
+        <div class="container">
+          <img src="1.jpg" alt="foto" />
+        </div>
+        <p>Jhon Perez</p>
+        <p>Front End Developer Junior</p>
+        <div class="container2">
+            <div class="item">
+                <img src="3.png" alt="linkedin"></a>
+            </div>
+            <div class="item">
+                <img src="4.png" alt="github">
+            </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

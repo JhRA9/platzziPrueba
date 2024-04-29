@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html {
+        /* Aqui tenemos 16px  cuando esta al 100%*/
+        /* Pero si lo dejamos al 62,5  equivaldria a 10 px */
+        font-size: 62.5%;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        background: aquamarine;
+      }
+      body {
+        margin: 0;
+      }
+      p {
+        /* Un rem equivale a 10 px */
+        font-size: 1rem;
+      }
+      .container {
+        /* Lo que quiere decir view width es ocupar  todo el ancho */
+        /* Lo que quiere  decir view height ocupar todo el alto */
+        width: 100vw;
+        height: 100vh;
+        background-color: blanchedalmond;
+      }
+    </style>
+  </head>
+  <body>
+    <div>hola mi mundo hermoso :3</div>
+    <p>Visualizacion de rem</p>
+    <div class="container"></div>
+  </body>
+</html>

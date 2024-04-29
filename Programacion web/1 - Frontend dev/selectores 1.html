@@ -1,0 +1,40 @@
+<!-- explicacion:
+    1) h1-> es un selector
+    2) color -> propiedad
+    3) aul -> es el valor -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Esto para para todos los elementos html*/
+        *{    
+            background: rebeccapurple;
+        }
+        /* Este selector se aplica a todos los elementos div */
+        div{ 
+            background: aqua;
+        }
+        /* Este selector se aplica a todos los elementos que tienen la claseEste selector se aplica a todos los elementos que tienen la clase titulo */
+        .titulo{ 
+            color: rgb(24, 187, 133);
+        }
+        /*  Este selector se aplica a un elemento específico que tiene el atributo "id" establecido como "titulo2" */
+        #titulo2{
+            color: rgb(207, 8, 8);
+        }
+        /*Este selector se aplica a todos los elementos <a> (enlaces) en la página  */
+        a{
+            color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <div class="titulo">Hola mi mundo</div>
+    <div id="titulo2">Esto es otro espacio</div>
+    <a href="https://www.youtube.com/watch?v=RzVvThhjAKw&ab_channel=RelaxationFilm">Relajacion</a>
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Este selector se aplica a todos los elementos <p> que están dentro de un elemento <div>. */
+        div p {
+            color: rgb(160, 160, 30);
+        }
+        /* Este selector se aplica a todos los elementos <div> que son hijos directos de otro elemento <div>. */
+        div > div {
+            background: aquamarine;
+        }
+        /* Este selector se aplica a todos los elementos <p> que están dentro de un elemento <div>  */
+        div > div p{
+            color: blue;
+        }
+        /* Este selector se aplica a todos los elementos que tienen la clase "tercero". */
+        .tercero{
+            color: magenta;
+        }
+        /* Este selector se aplica a todos los elementos <p> que son hermanos posteriores de un elemento <div>Este selector se aplica a todos los elementos <p> que son hermanos posteriores de un elemento <div> */
+        div ~ p{
+            color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>primer xd</p>
+        <div>
+            <p>segundo xd</p>
+            <div class="tercero">
+                tercer xd
+            </div>
+        </div>
+    </div>
+    <p>pruebas</p>
+    <p>pruebas de dos</p>
+</body>
+</html>

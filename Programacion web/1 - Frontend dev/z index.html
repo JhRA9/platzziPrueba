@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Los Z index hacen de referencia a que elementos prevalece uno por encima del otro */
+        div{
+            position: absolute;
+            background-color:aqua ;
+
+        }
+        .one{
+            z-index: 1;
+        }
+        .two{
+            z-index: 2;
+            top: 20px;
+        }
+        .tree{
+            z-index: 3;
+            top: 30px;
+        }
+        .four{
+            z-index: 4;
+            top: 40px;
+        }
+        .red{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            z-index: 3;
+            top: 70px;
+        }
+        .blue{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            z-index: 2;
+            top: 170px;
+            left: 80px;
+        }
+        .yellow{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            z-index: 4;
+            left: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">Prueba 1</div>
+    <div class="two">Prueba 2</div>
+    <div class="tree">Prueba 3</div>
+    <div class="four">Prueba 4</div>
+    <section>
+        <div class="red">red</div>
+        <div class="blue">blue
+            <div class="yellow">yellow</div>
+        </div>
+        
+    </section>
+</body>
+</html>
