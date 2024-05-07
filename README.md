@@ -1,1 +1,1 @@
-# platziPrueba
+Juego de la vida
