@@ -24,7 +24,10 @@
             font-size: 200%;
             top: 10px;
             left: 10px;
-            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         .btn{
@@ -35,6 +38,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            margin: 10px;
         }
         .btn i {
             font-size: 20px;
@@ -43,6 +47,9 @@
         .btn:hover{
             background: black;
             color: white;
+        }
+        .btn a{
+            color: black;
         }
     </style>
 
@@ -60,6 +67,11 @@
         </div>
         <div class="btn" id="btn3" onclick="limpiar()">
             <i class="fa-solid fa-eraser"></i>
+        </div>
+        <div class="btn" id="btn4">
+            <a href="https://github.com/JhRA9/repositorioEstudiosPlatzi/blob/main/README.md">
+                <i class="fa-brands fa-github"></i>
+            </a>
         </div>
     </div>
 
