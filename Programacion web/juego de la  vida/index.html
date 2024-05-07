@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de  la vida (By Conway)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <!-- CSS para los estilos visuales -->
+
+    <style>
+
+        body{
+            background: #f0f0ff;
+        }
+
+        td{
+            border: 1px solid #eee;
+        }
+
+        .contenedor-botones{
+            position: fixed;
+            font-size: 200%;
+            top: 10px;
+            left: 10px;
+            
+        }
+
+        .btn{
+            background-color: skyblue;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .btn i {
+            font-size: 20px;
+        }
+
+        .btn:hover{
+            background: black;
+            color: white;
+        }
+    </style>
+
+    <!-- HTML para la estructurar grafica -->
+
+    <div id="contenedor-tablero">
+    </div>
+
+    <div class="contenedor-botones">
+        <div class="btn" id="btn1" onclick="intercambiarReproduccion()">
+            <i class="fa-solid fa-play"></i>
+        </div>
+        <div class="btn" id="btn2" onclick="siguienteEstado()">
+            <i class="fa-solid fa-forward-step"></i>
+        </div>
+        <div class="btn" id="btn3" onclick="limpiar()">
+            <i class="fa-solid fa-eraser"></i>
+        </div>
+    </div>
+
+    <!-- JS para la parte logica -->
+     
+    <script>
+        let columnas = 80
+        let filas = 80
+        let lado = 20
+        let fotografia = []
+        let reproducir = false
+        
+        document.addEventListener("keydown", (e) =>{
+            e.preventDefault() // evita que se mueva el scroll
+            switch(e.keyCode){
+                case 39: // derecha
+                    siguienteEstado()
+                    break
+                case 32:
+                    intercambiarReproduccion() // espacio
+                case 8:
+                    limpiar() 
+                    
+                default:
+                    break
+            }
+        })
+
+        setInterval(() => {
+            if(reproducir){
+                siguienteEstado();
+            }
+        }, 20);
+
+        function intercambiarReproduccion(){
+            reproducir = !reproducir
+            if(reproducir){
+                document.body.style.backgroundColor = "#ffffff"
+                document.getElementById("btn1").innerHTML = "<i class='fas fa-pause'></i>"
+            }else{
+                document.body.style.backgroundColor = "#f0f0ff"
+                document.getElementById("btn1").innerHTML = "<i class='fas fa-play'></i>"
+            }
+        }
+        generarTablero()
+
+        function generarTablero(){
+            let html = "<table cellpadding=0 cellspacing=0 id='tablero'>"
+            for(let y = 0; y < filas; y++){
+                html += "<tr>"
+                for(let x = 0; x < columnas; x++){
+                    html += `<td id="celula-${x+ "-"+ y }" onmouseup = "cambiarEstado(${x},${y})">`
+                    html += "</td>"
+                }
+                html += "</tr>"
+            }
+            html += "</table>"
+            let contenedor = document.getElementById("contenedor-tablero")
+            contenedor.innerHTML = html
+            let tablero = document.getElementById("tablero")
+            tablero.style.width = lado * columnas + "px"
+            tablero.style.height = lado * filas + "px"
+        }
+
+        function cambiarEstado(x,y){
+            let celula = document.getElementById(`celula-${x+ "-"+ y }`)
+            if(celula.style.backgroundColor != "black"){
+                celula.style.backgroundColor = "black"
+            }else{
+                celula.style.backgroundColor = ""
+            }
+        }
+
+        function limpiar() {
+            for(let x = 0; x < columnas; x++){
+                for(let y = 0; y < columnas; y++){
+                    let celula = document.getElementById(`celula-${x+ "-"+ y }`)
+                    celula.style.backgroundColor = ""
+                }
+            }
+        }
+
+        function fotografiar() {
+            fotografia = []
+            for(let x = 0; x < columnas; x++){
+                fotografia.push([])
+                for(let y = 0; y < columnas; y++){
+                    let celula = document.getElementById(`celula-${x+ "-"+ y }`)
+                    fotografia[x][y] = celula.style.backgroundColor == "black"
+                }
+            }
+        }
+
+        function contarVivas(x,y){
+            let vivas = 0 
+            for(let i = -1; i <= 1; i++){
+                for(let j = -1; j <= 1; j++){
+                    if(i == 0 && j == 0){
+                        continue
+                    }
+                    try{
+                        if(fotografia[x + i][y + j]){
+                            vivas++
+                        }
+                    }catch(e){ }
+                    if(vivas > 3){
+                        return vivas
+                    }
+                }
+            }
+            return vivas
+        }
+
+        function siguienteEstado() {
+            fotografiar()
+            for(let x = 0; x < columnas; x++){
+                for(let y = 0; y < filas; y++){
+                    let vivas = contarVivas(x,y)
+                    let celula = document.getElementById(`celula-${x+ "-"+ y }`)
+                    if(fotografia[x][y]){
+                        if (vivas < 2 || vivas > 3){
+                            celula.style.backgroundColor = ""
+                            // va a morir por soledad o por sobrepoblacion
+                        }
+                    }else{
+                        if(vivas == 3){
+                            celula.style.backgroundColor = "black"
+                            // va a nacer
+                        }
+                    }
+                }
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>
